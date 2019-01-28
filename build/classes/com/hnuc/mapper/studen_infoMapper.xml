@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="student.mapper">
+  	<select id="selAll" resultType="com.hnuc.pojo.student">
+  		select * from student_info
+  	</select>
+  	
+  	<select id="selByNumber" resultType="com.hnuc.pojo.student" parameterType="String">
+  		select * from student_info where number = #{0}
+  	</select>
+  	
+	<select id="page" resultType="com.hnuc.pojo.student" parameterType="map">
+		select * from student_info limit #{pagestart},#{pagesize}
+	</select>
+  </mapper>
